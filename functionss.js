@@ -18,7 +18,8 @@ while(anio != 21 || anio >=21 )  {
     }
 }
 let cod = parseFloat(prompt("Ingrese el código de seguridad de su tarjeta:"));
-alert(`¿Están bien los siguientes datos?: ${tarjeta}
-${vencimiento}
-${cod}
+alert(`¿Están bien los siguientes datos?: ${tarjeta} - ${mes}/${anio} -  ${cod} -
 Si está bien, pulse aceptar, de lo contrario, recargue la página.`);
+
+let  datosTarjeta = [tarjeta,mes,anio,cod];
+console.log (datosTarjeta);
