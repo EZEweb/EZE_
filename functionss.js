@@ -28,7 +28,9 @@ let listaProductos = [
     {id: 1, nombre: "afiche", precio: 800},
     {id: 2, nombre: "sticker", precio: 200},
 ];
+function sumarIva(){
 listaProductos.forEach(producto => {
     let precioMasIva = producto.precio * 1.21;
     console.log(`el precio de ${producto.nombre} más IVA es $${precioMasIva}`)
 })
+}
