@@ -13,6 +13,12 @@
 body{
 	background-color: black;
 }
+.cargatarjeta button{
+	color:black;
+}
+.cargatarjeta input{
+	color: black;
+}
 .form-consulta {
 max-width: 100%; margin:0 auto; padding:6em 0 6em 0; 
 }

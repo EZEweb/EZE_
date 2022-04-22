@@ -1,3 +1,7 @@
+console.log(document.getElementById("afiches"));
+console.log(document.getElementsByClassName("logo"));
+
+function compra () {
 let tarjeta = parseFloat(prompt("Ingrese los 16 números de su tarjeta:"));
 let mes = parseInt(prompt("Ingrese el mes de vencimiento de su tarjeta:"));
 while(mes !=13  || mes <= 13)  {
@@ -23,11 +27,30 @@ Si está bien, pulse aceptar, de lo contrario, recargue la página.`);
 
 let  datosTarjeta = [tarjeta,mes,anio,cod];
 console.log (datosTarjeta);
+}
+
+class Producto {
+    constructor(id, nombre, precio) {
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+}
 
 let listaProductos = [
-    {id: 1, nombre: "afiche", precio: 800},
-    {id: 2, nombre: "sticker", precio: 200},
+    {id: 0, nombre: "afiche", precio: 800},
+    {id: 1, nombre: "sticker", precio: 200},
 ];
+
+function guardarProducto() {
+    let id = document.getElementById("id").value;
+    let nombre = document.getElementById("nombre").value;
+    let precio = parseInt(document.getElementById("precio").value);
+
+    let nuevoProd = new Producto (id, nombre, precio);
+    listaProductos.push(nuevoProd);
+}
+
 function sumarIva(){
 listaProductos.forEach(producto => {
     let precioMasIva = producto.precio * 1.21;
