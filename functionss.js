@@ -51,6 +51,16 @@ function guardarProducto() {
     listaProductos.push(nuevoProd);
 }
 
+listaProductos.forEach(opciones => {
+    let nodo = document.createElement("grid");
+    nodo.innerHTML = `
+        <img src="img/${opciones.nombre}.jpg">
+        <h3>${opciones.nombre}</h3>
+        <p>Precio $${opciones.precio}</p>
+    `
+    document.getElementById("productos").appendChild(nodo);
+})
+
 function sumarIva(){
 listaProductos.forEach(producto => {
     let precioMasIva = producto.precio * 1.21;
