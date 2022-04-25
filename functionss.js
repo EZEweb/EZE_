@@ -52,7 +52,7 @@ function guardarProducto() {
 }
 
 listaProductos.forEach(opciones => {
-    let nodo = document.createElement("grid");
+    let nodo = document.createElement("grid2");
     nodo.innerHTML = `
         <img src="img/${opciones.nombre}.jpg">
         <h3>${opciones.nombre}</h3>
@@ -64,6 +64,18 @@ listaProductos.forEach(opciones => {
 function sumarIva(){
 listaProductos.forEach(producto => {
     let precioMasIva = producto.precio * 1.21;
-    console.log(`el precio de ${producto.nombre} más IVA es $${precioMasIva}`)
+    alert(`el precio de ${producto.nombre} más IVA es $${precioMasIva}`)
 })
 }
+
+const boton = document.querySelector("#btn");
+
+boton.addEventListener("click", ()=>{
+    guardarProducto();
+})
+
+const botonIva = document.querySelector("#btnIva");
+
+botonIva.addEventListener("click", ()=>{
+    sumarIva();
+})
