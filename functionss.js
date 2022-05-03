@@ -40,6 +40,7 @@ class Producto {
 let listaProductos = [
     {id: 0, nombre: "afiche", precio: 800},
     {id: 1, nombre: "sticker", precio: 200},
+    {id: 2, nombre: "pines", precio: 100},
 ];
 
 localStorage.setItem("producto", JSON.stringify(listaProductos));
@@ -61,7 +62,7 @@ listaProductos.forEach(opciones => {
         <h3>${opciones.nombre}</h3>
         <p>Precio $${opciones.precio}</p>
     `
-    document.getElementById("productos").appendChild(nodo);
+    document.getElementById("grid2").appendChild(nodo);
 })
 
 

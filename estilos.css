@@ -111,13 +111,13 @@ padding: 10em 0 10em 0;
 width:100%;
 text-align:center;
 }
-.grid{
+#grid{
 	grid-template-columns:100%;
 	text-align:center;
 	display:grid;
 	margin: 0%;
 }
-.grid2{
+#grid2{
 text-align:left;
 width:100%;
 display:grid;
@@ -132,7 +132,7 @@ width:60%;
 margin:0 auto;
 text-align:center;
 }
-.grid2 img{
+#grid2 img{
 width:100%;
 display:grid;
 text-align: left; 
@@ -281,7 +281,7 @@ padding-bottom:6em;
 #menu_on{
 	display: none;
 }
-.grid{
+#grid{
 	grid-template-columns: 30% 30% 30%;
 	margin:6% 0 12% 6%;
 }
@@ -350,10 +350,9 @@ width: 80%;
 	padding:0.5em 6em 0 6em;
 	width: 100%;
 }
-.grid2{
+#grid2{
 width:100%;
 margin:0 1em 0 1em;
-display:grid;
 }
 .banner2, img{
 width:29%;
@@ -387,7 +386,7 @@ padding:2em 0;
 background: #ff00ff;
 }
 .form-consulta {
-max-width: 39%; margin-left:7em; padding:1em 0 7em 0; display:inline-block; overflow:auto; float: left;
+max-width: 39%; margin-left:7em; padding:1em 0 7em 0; display:inline-block; overflow:auto; float:left;
 }
 .campo-form {
 width:100%; height:2em; margin:2px 0 6px;  box-sizing: border-box; padding:0.5em 0 0 0.5em; color:black;
@@ -402,7 +401,7 @@ min-height: 10em!important;
 width:100%;
 display:inline-block;
 overflow:auto;
-float: left;
+float:left;
 }
 .banner5{
 max-width: 50%; margin-right:16em;
