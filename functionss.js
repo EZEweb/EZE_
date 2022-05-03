@@ -42,6 +42,9 @@ let listaProductos = [
     {id: 1, nombre: "sticker", precio: 200},
 ];
 
+localStorage.setItem("producto", JSON.stringify(listaProductos));
+console.log (listaProductos.producto);
+
 function guardarProducto() {
     let id = document.getElementById("id").value;
     let nombre = document.getElementById("nombre").value;
@@ -60,6 +63,7 @@ listaProductos.forEach(opciones => {
     `
     document.getElementById("productos").appendChild(nodo);
 })
+
 
 function sumarIva(){
 listaProductos.forEach(producto => {
