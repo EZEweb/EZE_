@@ -110,7 +110,7 @@ class Producto {
 
 let listaProductos = [
     {id: 0, nombre: "afiche", precio: 800},
-    {id: 1, nombre: "sticker", precio: 200},
+    // {id: 1, nombre: "sticker", precio: 200},
     // {id: 2, nombre: "pines", precio: 100},
 ];
 
