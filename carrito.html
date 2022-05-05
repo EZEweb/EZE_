@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejemplo carrito</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="./estilos.css" rel="stylesheet" />
+</head>
+<body>
+	<section>
+    <div class="#hamburguesa">
+      <a href="#" id="menu_on">
+        <img src="img/logo.png" style="transform: rotate(-270deg); width: 5em;">
+      </a>
+    </div>
+  <header>
+    <div class="logo"><a href="index.html"><img src="img/iso.gif"></a></div>
+    <nav>
+      <ul>
+        <li><a href="identidad.html" >trabajos_</a></li>
+        <li><a href="editorial.html">merch_</a></li>
+        <li><a href="yo.html">contacto_</a></li>
+        <li>  <a class="cart-btn">
+          <i id="cart" class="fas fa-shopping-cart"></i>
+            <span class ="cantidad-en-carro">0</span>
+        </a></li>
+      </ul>
+      <a href="editorial.html"><img src="img/logo.png" style="float:right; transform: rotate(-90deg); width: 5em; margin-right:-2em; z-index:2;"></a>
+      <a href="yo.html" style="text-align:left; float:left; max-width:50%; font-size:70%; padding:12em 0 0 0;";>¿Queres saber sobre mí? !Entrá acá y te cuento mientras tomamos algo!
+      <img src="img/fernet.gif" style="float:left; width:80%;"></a>
+    </nav>
+  </header>
+  </section>
+  <!--  cart modal  -->
+  <div class="carrito">
+    <div class="carrito-desplegado">
+      <i id="close-btn" class="fas fa-times"></i>
+        <h1 class="cart-is-empty">El carrito esta vacio</h1>
+        <div class="productos-seleccionados">
+        </div>
+        <div class="total">
+          <h1 class="carrito-total">TOTAL</h1>
+            <span class="precio-total">$0</span>
+              <button class="purchase-btn">COMPRAR</button>
+        </div>
+      </div>
+    </div>
+<!--   end of cart modal -->
+
+<!--  products  -->
+  <div class="items-container">
+
+    <div class="card-1 card" id="item1">
+      <img class="imagen-producto" src="https://via.placeholder.com/300x400" alt="">
+        <h3>Producto 1</h3>
+        <button class="boton-anadir">Comprar</button>
+        <span class="product-price">$1395</span>
+    </div>
+
+    <div id="grid">
+			<div id="grid2">
+        <button class="boton-anadir">Comprar</button>
+      </div>
+		</div>
+
+    <div class="card-2 card" id="item2">
+        <img class="imagen-producto" src="https://via.placeholder.com/300x400" alt="">
+        <h3>Producto 2</h3>
+        <button class="boton-anadir">Comprar</button>
+        <span class="product-price">$1175</span>
+    </div>
+  
+  </div>
+<!--  end of products  -->
+  
+<script src="functionss.js"></script>
+
+<footer>
+  <div class="bajadita"><p>Derechos de EZE_<br>Diseñado por EZE_<br>¡Soy responsive!</p>
+  </div>
+  <div class="redes">
+  <li>¡Encontrame por acá!:</li>
+  <ul>
+    <li><a href="https://www.youtube.com/channel/UCQiCdNLs140Wyn2IkcqeCEg?view_as=subscriber" target="nueva"><img src="img/youtube.png" style="width:3em ;"></a></li>
+    <li><a href="https://www.linkedin.com/in/ezequiel-rico-2b54b4162/" target="nueva"><img src="img/linkedin.png" style="width:3em;"></a></li>
+    <li><a href="https://www.instagram.com/eze_.ai/" target="nueva"><img src="img/insta.png" style="width:3em;"></a></li>
+  </ul>
+  </div>
+</footer>
+</body>
+</html>
