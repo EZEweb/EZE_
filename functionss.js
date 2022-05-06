@@ -63,6 +63,8 @@ function agregarElem(prodId, prodName, price, imageSrc){
     productRow.querySelector(".product-quantity").addEventListener("change", cambiarCantidad)
     updatePrice();
 
+    localStorage.setItem("carritoActual", JSON.stringify(cartRowItem));
+    console.log (cartRowItem.carritoActual);
 }
 
 //eliminar elementos
@@ -112,8 +114,8 @@ let listaProductos = [
     // {id: 2, nombre: "pines", precio: 100},
 ];
 
-localStorage.setItem("producto", JSON.stringify(listaProductos));
-console.log (listaProductos.producto);
+// localStorage.setItem("producto", JSON.stringify(listaProductos));
+// console.log (listaProductos.producto);
 
 function guardarProducto() {
     let id = document.getElementById("id").value;
