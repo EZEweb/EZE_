@@ -10,6 +10,45 @@
 	list-style:none;
 	letter-spacing: −2em;
 }
+/* para el chiste del modo oscuro */
+:root {
+  --color-green: #ffffff;
+  --color-red: #7c7c7c;
+  --color-button: #fdfffd;
+  --color-black: #000;
+}
+.switch-button {
+  display: inline-block;
+}
+.switch-button .switch-button__checkbox {
+  display: none;
+}
+.switch-button .switch-button__label {
+  background-color: var(--color-red);
+  width: 3rem;
+  height: 1.5rem;
+  display: inline-block;
+  position: relative;
+}
+.switch-button .switch-button__label:before {
+  transition: .2s;
+  display: block;
+  position: absolute;
+  width: 2rem;
+  height: 1.5rem;
+  background-color: var(--color-button);
+  content: '';
+  box-shadow: inset 0px 0px 0px 1px var(--color-black);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label {
+  background-color: var(--color-green);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label:before {
+  transform: translateX(1rem);
+}
+
+/* para el chiste del modo oscuro */
+
 body{
 	background-color: black;
 }
@@ -254,11 +293,10 @@ display:none;
   .boton-anadir {
     background-color: #ff00ff;
     color: white;
-    position: absolute;
     right: 0;
-    top: 65%;
+    bottom: 0;
     font-weight: bolder;
-    font-size: 1.2rem
+    font-size: 1rem
   }
   
   .product-price {
@@ -350,6 +388,10 @@ display:none;
     width: 10rem;
     margin: 1em;
   }
+
+  .cart-btn img{
+    width: 5%;
+  }
   
   .cart-price {
     color: white;
@@ -404,9 +446,6 @@ display:none;
 header nav ul li a {
 	display: block;
 }
-header img{
-	float:center;
-}
 header nav { 
 	float: left;
 	height:100%;
@@ -438,7 +477,8 @@ list-style:none;
 }
 .redes ul li {
 padding-top:1em;
-padding-right:1em;}
+padding-right:1em;
+}
 }
 @media (min-width: 60em) {
 * {
@@ -516,7 +556,6 @@ header nav{
 header nav ul li {
 	padding: 0 0.5em 0 0.5em;
 	display:inline-block;
-	overflow:auto;
 }
 header nav ul li:hover{
 background: #ff00ff;
