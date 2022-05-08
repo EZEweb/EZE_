@@ -2,4 +2,4 @@
 $("#switch-label").on("click",function(){
     swal("No te lastimes los ojos, dejalo en modo oscuro ;)");
 })
-/// fin de chiste/// carrito nuevo
+/// fin de chiste

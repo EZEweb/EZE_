@@ -254,11 +254,10 @@ display:none;
 /* esto es para el carrito */
 .cart-btn {
     display: flex;
-    justify-content: flex-end;
   }
   
   #icono-carrito {
-    position: relative;
+    position: absolute;
     font-size: 2rem;
     cursor: pointer;
   }
@@ -326,7 +325,7 @@ display:none;
     overflow-x: hidden;
   }
   
-  #close-btn {
+  #boton-cerrar {
     font-size: 1.5rem;
     float: right;
     margin: .5em 2em 0 0;
@@ -391,7 +390,8 @@ display:none;
   }
 
   .cart-btn img{
-    width: 5%;
+    width: 25%;
+    height: 25%;
   }
   
   .cart-price {
@@ -557,6 +557,7 @@ header nav{
 header nav ul li {
 	padding: 0 0.5em 0 0.5em;
 	display:inline-block;
+  width: 6em;
 }
 header nav ul li:hover{
 background: #ff00ff;

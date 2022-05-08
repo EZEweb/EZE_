@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ejemplo carrito</title>
+    <title>Tienda EZE_</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link href="./estilos.css" rel="stylesheet" />
 </head>
@@ -22,9 +22,9 @@
         <li><a href="identidad.html" >trabajos_</a></li>
         <li><a href="editorial.html">merch_</a></li>
         <li><a href="yo.html">contacto_</a></li>
-        <li>  
+        <li id="carro">  
           <a class="cart-btn">
-            <img src="img/afiche.jpg" id="cart">
+            <img src="img/afiche.jpg">
             <p class ="cantidad-en-carro">0</p>
           </a>
         </li>
@@ -38,7 +38,7 @@
   <!--  cart modal  -->
   <div class="carrito">
     <div class="carrito-desplegado">
-      <i id="close-btn" class="fas fa-times"></i>
+      <i id="boton-cerrar" class="fas fa-times"></i>
         <h1 class="cart-is-empty">El carrito esta vacio</h1>
         <div class="productos-seleccionados">
         </div>
@@ -63,6 +63,10 @@
     </div>
 
 			<div id="grid2">
+        <img class="imagen-producto" src="img/afiche.jpg" alt="">
+        <h3>Afiche </h3>
+        <span class="product-price">$800</span>
+        <br>
         <button class="boton-anadir">Comprar</button>
       </div>
 
@@ -78,7 +82,7 @@
 <!--  end of products  -->
   
 <script src="functionss.js"></script>
-<script src="main.js"></script>
+
 
 <footer>
   <div class="bajadita"><p>Derechos de EZE_<br>Diseñado por EZE_<br>¡Soy responsive!</p>
