@@ -156,11 +156,6 @@ text-align:center;
 	text-align:center;
 	margin: 0%;
 }
-#grid2{
-text-align:left;
-width:100%;
-display:grid;
-}
 .bannerimg{
 text-align:center;
 }
@@ -170,7 +165,32 @@ width:60%;
 margin:0 auto;
 text-align:center;
 }
+#grid2{
+  text-align:left;
+  width:100%;
+  display:grid;
+}
 #grid2 img{
+width:10em;
+display:grid;
+text-align: left;
+}
+#grid1{
+  text-align:left;
+  width:100%;
+  display:grid;
+}
+#grid1 img{
+width:10em;
+display:grid;
+text-align: left;
+}
+#grid0{
+  text-align:left;
+  width:100%;
+  display:grid;
+}
+#grid0 img{
 width:10em;
 display:grid;
 text-align: left;
@@ -581,6 +601,14 @@ width: 80%;
 #grid2{
 width:100%;
 margin:0 1em 0 1em;
+}
+#grid1{
+  width:100%;
+  margin:0 1em 0 1em;
+}
+#grid0{
+  width:100%;
+  margin:0 1em 0 1em;
 }
 .banner2, img{
 width:29%;

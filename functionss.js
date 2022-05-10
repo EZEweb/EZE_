@@ -4,6 +4,29 @@ const carritoAbierto = document.querySelector(".carrito");
 const botonCerrar = document.querySelector("#boton-cerrar");
 const botonAnadir = document.getElementsByClassName("boton-anadir");
 const productoSeleccionado = document.getElementsByClassName("product-row"); 
+//Desde acá me ayudó gonza
+let listaProductos = [
+    {id: 0, nombre: "afiche", precio: 800},
+    // {id: 1, nombre: "sticker", precio: 200},
+    // {id: 2, nombre: "pines", precio: 100},
+];
+
+// console.log(JSON.stringify(listaProductos));
+
+const traerProductos = () => {
+    fetch("./productos.json")
+        .then(productos => productos.json())
+        .then(data => {
+            console.log(data)
+        });
+}
+
+// traerProductos();
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+//Hasta acá me ayudó gonza
+
 
 //abrir carrito
 carro.addEventListener("click",()=>{
@@ -15,10 +38,14 @@ botonCerrar.addEventListener("click",()=>{
     carritoAbierto.classList.remove("open");
 })
 
+// carritoAbierto.addEventListener("click",(e)=>{
+//     if(e.target.classList.contains("carrito")){
+//         carritoAbierto.classList.remove("open");
+//     }
+// })
+
 carritoAbierto.addEventListener("click",(e)=>{
-    if(e.target.classList.contains("carrito")){
-        carritoAbierto.classList.remove("open");
-    }
+    e.target.classList.contains("carrito") && carritoAbierto.classList.remove("open")
 })
 
 //asignarle a cada boton, su funcion
@@ -26,6 +53,13 @@ for (let i=0; i < botonAnadir.length; i++) {
     let boton = botonAnadir[i];
     boton.addEventListener("click", agregarCarrito)
 }
+
+// function sumarIva(){
+// listaProductos.forEach(producto => {
+//     let precioMasIva = producto.precio * 1.21;
+//     alert(`el precio de ${producto.nombre} más IVA es $${precioMasIva}`)
+// })
+// }
 
 function agregarCarrito(e) {
     let boton = e.target;
@@ -43,12 +77,22 @@ function agregarElem(idProducto, nombreProducto, precio, imageSrc){
     let prodArray = document.getElementsByClassName("product-row");
 
     //vamos a ver si el producto ya se agrego o no
+    // for(let i=0; i < prodArray.length; i++) {
+    //     if(prodArray[i].getAttribute("id")== idProducto) {
+    //         alert("Este producto ya existe en el carrito");
+    //         return;
+    //     }
+    // }
+    // for(let i=0; i < prodArray.length; i++) {
+    //     prodArray[i].getAttribute("id")== idProducto && alert("Este producto ya existe en el carrito");
+    // }
+
     for(let i=0; i < prodArray.length; i++) {
-        if(prodArray[i].getAttribute("id")== idProducto) {
-            alert("Este producto ya existe en el carrito");
-            return;
-        }
+        prodArray[i].getAttribute("id") === idProducto && alert("Ahora tienes " +`${prodArray.length}` + " en el carrito");
     }
+
+
+// prodArray.length === 2 ? prodArray.length ++ : prodArray === 1;
 
     //inyectar el html al carrito
     let productoOfrecido = `
@@ -106,8 +150,8 @@ function precioActual() {
 
 ///hasta acá carrito nuevo
 
-console.log(document.getElementById("afiches"));
-console.log(document.getElementsByClassName("logo"));
+// console.log(document.getElementById("afiches"));
+// console.log(document.getElementsByClassName("logo"));
 
 class Producto {
     constructor(id, nombre, precio) {
@@ -117,52 +161,58 @@ class Producto {
     }
 }
 
-let listaProductos = [
-    {id: 0, nombre: "afiche", precio: 800},
-    //{id: 1, nombre: "sticker", precio: 200},
-    //{id: 2, nombre: "pines", precio: 100},
-];
 
-// localStorage.setItem("producto", JSON.stringify(listaProductos));
+localStorage.setItem("producto", JSON.stringify(listaProductos));
 // console.log (listaProductos.producto);
 
-function guardarProducto() {
-    let id = document.getElementById("id").value;
-    let nombre = document.getElementById("nombre").value;
-    let precio = parseInt(document.getElementById("precio").value);
+// function guardarProducto() {
+//     let id = document.getElementById("id").value;
+//     let nombre = document.getElementById("nombre").value;
+//     let precio = parseInt(document.getElementById("precio").value);
 
-    let nuevoProd = new Producto (id, nombre, precio);
-    listaProductos.push(nuevoProd);
-}
+//     let nuevoProd = new Producto (id, nombre, precio);
+//     listaProductos.push(nuevoProd);
+// }
 
 // esto lo saco porque lo hice manualmente en el html
 
+listaProductos.forEach(opciones => {
+    let nodo = document.createElement("grid2");
+    nodo.innerHTML = `
+        <img class="imagen-producto" src="img/${opciones.nombre}.jpg">
+        <h3>${opciones.nombre}</h3>
+        <span class="product-price">$${opciones.precio}</span>
+    `
+    document.getElementById("grid2").appendChild(nodo);
+})
+
+//acá quise probar de que, mediante DOM, genere un grid distinto x cada id de producto que tenga
+
 // listaProductos.forEach(opciones => {
-//     let nodo = document.createElement("grid2");
+//     let nodo = document.createElement(`"grid ${opciones.id}"`);
 //     nodo.innerHTML = `
 //         <img class="imagen-producto" src="img/${opciones.nombre}.jpg">
 //         <h3>${opciones.nombre}</h3>
 //         <span class="product-price">$${opciones.precio}</span>
 //     `
-//     document.getElementById("grid2").appendChild(nodo);
+//     document.getElementById(`"grid ${opciones.id}"`).appendChild(nodo);
 // })
 
+// function sumarIva(){
+// listaProductos.forEach(producto => {
+//     let precioMasIva = producto.precio * 1.21;
+//     alert(`el precio de ${producto.nombre} más IVA es $${precioMasIva}`)
+// })
+// }
 
-function sumarIva(){
-listaProductos.forEach(producto => {
-    let precioMasIva = producto.precio * 1.21;
-    alert(`el precio de ${producto.nombre} más IVA es $${precioMasIva}`)
-})
-}
-
-const boton = document.querySelector("#btn");
+// const boton = document.querySelector("#btn");
 
 //esto activa el boton para añadir un producto nuevo (no necesario) en compra.html
 // boton.addEventListener("click", ()=>{
 //     guardarProducto();
 // })
 
-const botonIva = document.querySelector("#btnIva");
+// const botonIva = document.querySelector("#btnIva");
 
 //esto activa el boton del iva en compra.html
 // botonIva.addEventListener("click", ()=>{
