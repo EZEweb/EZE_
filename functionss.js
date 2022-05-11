@@ -5,28 +5,50 @@ const botonCerrar = document.querySelector("#boton-cerrar");
 const botonAnadir = document.getElementsByClassName("boton-anadir");
 const productoSeleccionado = document.getElementsByClassName("product-row"); 
 //Desde acá me ayudó gonza
-let listaProductos = [
-    {id: 0, nombre: "afiche", precio: 800},
-    // {id: 1, nombre: "sticker", precio: 200},
-    // {id: 2, nombre: "pines", precio: 100},
-];
+// let listaProductos = [
+//     {id: 0, nombre: "afiche", precio: 800},
+//     {id: 1, nombre: "sticker", precio: 200},
+//     {id: 2, nombre: "pines", precio: 100},
+// ];
 
-// console.log(JSON.stringify(listaProductos));
+// const traerProductos = () => {
+//     fetch("productos.json")
+//         .then(productos => productos.json())
+//         .then(data => {
+//             console.log(data)
+//         });
+// }
 
-const traerProductos = () => {
-    fetch("./productos.json")
-        .then(productos => productos.json())
-        .then(data => {
-            console.log(data)
-        });
-}
 
-// traerProductos();
-
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+// let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 //Hasta acá me ayudó gonza
 
+//esto funciona ok mostrandolo en consola
+// const traerProductos = () => {
+//     fetch("listado.json")
+//         .then(respuesta => (respuesta.json()))
+//         .then(listadoJson => console.log(listadoJson))
+//         .catch(error => console.log (error))
+// }
+
+const traerProductos = () => {
+    fetch("listado.json")
+        .then(respuesta => (respuesta.json()))
+        .then((listadoJson) => {
+            let itemizado = listadoJson;
+            itemizado.forEach(item => {
+                grid3.innerHTML += `
+                    <img class="imagen-producto" src="img/${item.nombre}.jpg">
+                    <h3>${item.nombre}</h3>
+                    <span class="precio-productoZZ">$${item.precio}</span>
+                `
+            })
+        })
+        .catch(error => console.log (error))
+}
+
+traerProductos();
 
 //abrir carrito
 carro.addEventListener("click",()=>{
@@ -54,19 +76,12 @@ for (let i=0; i < botonAnadir.length; i++) {
     boton.addEventListener("click", agregarCarrito)
 }
 
-// function sumarIva(){
-// listaProductos.forEach(producto => {
-//     let precioMasIva = producto.precio * 1.21;
-//     alert(`el precio de ${producto.nombre} más IVA es $${precioMasIva}`)
-// })
-// }
-
 function agregarCarrito(e) {
     let boton = e.target;
     let cartItem = boton.parentElement;
     let idProducto = cartItem.getAttribute("id");
     let nombreProducto = cartItem.querySelector("h3").innerText;
-    let precio = cartItem.querySelector(".product-price").innerText;
+    let precio = cartItem.querySelector(".precio-producto").innerText;
     let imageSrc = cartItem.querySelector(".imagen-producto").src;
     agregarElem(idProducto, nombreProducto, precio, imageSrc);
 }
@@ -77,22 +92,9 @@ function agregarElem(idProducto, nombreProducto, precio, imageSrc){
     let prodArray = document.getElementsByClassName("product-row");
 
     //vamos a ver si el producto ya se agrego o no
-    // for(let i=0; i < prodArray.length; i++) {
-    //     if(prodArray[i].getAttribute("id")== idProducto) {
-    //         alert("Este producto ya existe en el carrito");
-    //         return;
-    //     }
-    // }
-    // for(let i=0; i < prodArray.length; i++) {
-    //     prodArray[i].getAttribute("id")== idProducto && alert("Este producto ya existe en el carrito");
-    // }
-
     for(let i=0; i < prodArray.length; i++) {
         prodArray[i].getAttribute("id") === idProducto && alert("Ahora tienes " +`${prodArray.length}` + " en el carrito");
     }
-
-
-// prodArray.length === 2 ? prodArray.length ++ : prodArray === 1;
 
     //inyectar el html al carrito
     let productoOfrecido = `
@@ -110,14 +112,17 @@ function agregarElem(idProducto, nombreProducto, precio, imageSrc){
     productRow.querySelector(".product-quantity").addEventListener("change", cambiarCantidad)
     precioActual();
 
-//esto no funciona :(
-    localStorage.setItem("carritoActual", JSON.stringify(productoOfrecido));
-    console.log (productoOfrecido.carritoActual);
+    
+    // let arrayCarrito = [];
+    // arrayCarrito.append("cosa");
+    // console.log (arrayCarrito);
 
-    // let estadoCarrito = JSON.stringify(productoOfrecido);
+    //esto no funciona :(
+    // var carrox = document.getElementsByClassName('product-row');
+    // var contenidos = carrox.innerHTML;
+    localStorage.setItem("carritoActual", productRow.id.innerHTML);
+    console.log (productRow)
 
-    // localStorage.setItem("carritoActual", JSON.stringify(estadoCarrito));
-    // console.log (estadoCarrito.carritoActual);
 }
 
 //eliminar elementos
@@ -161,8 +166,18 @@ class Producto {
     }
 }
 
+// listaProductos.forEach(opciones => {
+//     let nodo = document.createElement("grid2");
+//     nodo.innerHTML = `
+//         <img class="imagen-producto" src="img/${opciones.nombre}.jpg">
+//         <h3>${opciones.nombre}</h3>
+//         <span class="product-price">$${opciones.precio}</span>
+//     `
+//     document.getElementById("grid2").appendChild(nodo);
+// })
 
-localStorage.setItem("producto", JSON.stringify(listaProductos));
+// localStorage.setItem("producto", JSON.stringify(listaProductos));
+
 // console.log (listaProductos.producto);
 
 // function guardarProducto() {
@@ -176,15 +191,6 @@ localStorage.setItem("producto", JSON.stringify(listaProductos));
 
 // esto lo saco porque lo hice manualmente en el html
 
-listaProductos.forEach(opciones => {
-    let nodo = document.createElement("grid2");
-    nodo.innerHTML = `
-        <img class="imagen-producto" src="img/${opciones.nombre}.jpg">
-        <h3>${opciones.nombre}</h3>
-        <span class="product-price">$${opciones.precio}</span>
-    `
-    document.getElementById("grid2").appendChild(nodo);
-})
 
 //acá quise probar de que, mediante DOM, genere un grid distinto x cada id de producto que tenga
 
