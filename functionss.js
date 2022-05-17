@@ -3,7 +3,6 @@ const carritoAbierto = document.querySelector(".carrito");
 const botonCerrar = document.querySelector("#boton-cerrar");
 var botonAnadir = document.getElementsByClassName("boton-anadir");
 const cantidadDeproductosSeleccionados = document.getElementsByClassName("producto-en-carro"); 
-// var cartera = [];
 
 const traerProductos = () => {
     fetch("listado.json")
@@ -44,7 +43,6 @@ carritoAbierto.addEventListener("click",(e)=>{
 })
 
 //asignarle a cada boton, su funcion
-
 function agregarCarrito(e) {
     let boton = e.target;
     let itemEncarro = boton.parentElement;
@@ -59,11 +57,6 @@ function agregarElem(idProducto, nombreProducto, precio, imageSrc){
     let productoEncarro = document.createElement("div");
     let cantidadDeproductosSeleccionados = document.querySelector(".productos-seleccionados");
     let prodArray = document.getElementsByClassName("producto-en-carro");
-
-    //vamos a ver si el producto ya se agrego o no
-    // for(let i=0; i < prodArray.length; i++) {
-    //     prodArray[i].getAttribute("id") === idProducto && alert("Ahora tienes " +`${prodArray.length}` + " en el carrito");
-    // }
 
     //inyectar el html al carrit0
     let productoEncarroYainyectado = `
@@ -128,8 +121,8 @@ function jsonCarrito(){
 }
 
 function cargarCarritoDeLocalStorage () {
-    var jsoncarrito = JSON.parse(localStorage.getItem('carritoAhora'));
-    jsoncarrito.forEach (function (el) {
+    var jsoncarrito = JSON.parse(localStorage.getItem('carritoAhora')) || [];
+    jsoncarrito.forEach (function (el){
         agregarElem(el.id, el.nombre, el.precio, `img/${el.nombre}.jpg`)
     })
 }

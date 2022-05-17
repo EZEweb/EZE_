@@ -14,7 +14,7 @@
 	<section>
 		<div class="#hamburguesa">
 			<a href="#" id="menu_on">
-<img src="img/logo.png" style="transform: rotate(-270deg); width: 5em;">
+			<img src="img/logo.png" style="transform: rotate(-270deg); width: 5em;">
 			</a>
 		</div>
 	<header>
@@ -22,8 +22,14 @@
 		<nav>
 			<ul>
 				<li><a href="identidad.html" >trabajos_</a></li>
-				<li><a href="editorial.html">merch_</a></li>
+				<li><a href="carrito.html">merch_</a></li>
 				<li><a href="yo.html">contacto_</a></li>
+				<li>
+					<div class="switch-button">
+						<input type="checkbox" name="switch-button" id="switch-label" class="switch-button__checkbox">
+						<label for="switch-label" class="switch-button__label"></label>
+					</div>
+				</li>
 			</ul>
 			<a href="identidad.html"><img src="img/logo.png" style="float:right; transform: rotate(-90deg); width: 5em; margin-right:-2em; z-index:2;"></a>
 			<a href="yo.html" style="text-align:left; float:left; max-width:50%; font-size:70%; padding:12em 0 0 0;";>¿Queres saber sobre mí? !Entrá acá y te cuento mientras tomamos algo!
@@ -87,5 +93,7 @@
 	</ul>
 	</div>
 </footer>
+<script src="sweet.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>
