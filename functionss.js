@@ -1,3 +1,12 @@
+$( document ).ready(function() {
+    $('#menu_on').click(function(){
+    	$('body').toggleClass('visible_menu');
+    })
+    $('#menu_off').click(function(){
+      $('body').toggleClass('visible_menu');
+    })  
+});
+
 const carro = document.querySelector("#carro");
 const carritoAbierto = document.querySelector(".carrito");
 const botonCerrar = document.querySelector("#boton-cerrar");
