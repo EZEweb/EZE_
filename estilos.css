@@ -295,8 +295,8 @@ display:none;
   .cantidad-en-carro {
     color: white;
     background-color: red;
-    padding: .2em .3em;
-    margin: .8em 7.5em 0 0;
+    padding: 0.2em 0.3em;
+    margin: 1em 0 0 0;
     border: solid 2px red;
     border-radius: 15px;
     font-weight: bolder;
@@ -340,6 +340,7 @@ display:none;
     width: 100vw;
     height: 100%;
     z-index: 2;
+    top:0;
     transform: translateY(-200%);
     transition: .5s ease-out;
   }
@@ -420,8 +421,8 @@ display:none;
   }
 
   .cart-btn img{
-    width: 25%;
-    height: 25%;
+    width: 50%;
+    height: 50%;
   }
   
   .precio-producto {
@@ -551,7 +552,7 @@ padding-bottom:6em;
 }
 #grid{
 	grid-template-columns: 30% 30% 30%;
-	margin:2% 0 12% 2%;
+	margin:10% 4% 20% 4%;
 }
 header nav a{
 display: none;
@@ -560,10 +561,13 @@ display: none;
 width: 15em; 
 margin-left: 7em; 
 text-align:center;
+position: fixed;
+background-color: #000;
 }
 .logo img{
 width:8em;
-padding-top:0.5em;}
+padding-top:0.5em;
+}
 .gracias{
 text-align:center;
 max-width:50%;
