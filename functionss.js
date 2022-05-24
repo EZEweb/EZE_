@@ -1,9 +1,10 @@
+//declaro las variables principales
 const carro = document.querySelector("#carro");
 const carritoAbierto = document.querySelector(".carrito");
 const botonCerrar = document.querySelector("#boton-cerrar");
-var botonAnadir = document.getElementsByClassName("boton-anadir");
 const cantidadDeproductosSeleccionados = document.getElementsByClassName("producto-en-carro"); 
 
+//mostrar productos
 const traerProductos = () => {
     fetch("listado.json")
         .then(respuesta => (respuesta.json()))
@@ -23,7 +24,7 @@ const traerProductos = () => {
         for (let i=0; i < botonAnadir.length; i++) {
             let boton = botonAnadir[i];
             boton.addEventListener("click", agregarCarrito)
-        }        
+        }
         })
         .catch(error => console.log (error))
     }
@@ -42,7 +43,7 @@ carritoAbierto.addEventListener("click",(e)=>{
     e.target.classList.contains("carrito") && carritoAbierto.classList.remove("open")
 })
 
-//asignarle a cada boton, su funcion
+//asignar función a cada botón
 function agregarCarrito(e) {
     let boton = e.target;
     let itemEncarro = boton.parentElement;
@@ -106,7 +107,7 @@ function precioActual() {
     localStorage.setItem ("carritoAhora",JSON.stringify(jsonCarrito()));
 }
 
-/// generando array de productos en carro
+//generando array de productos en carrit0
 function jsonCarrito(){
     const carrito = document.querySelectorAll('.producto-en-carro');
     var json_carrito = [];
@@ -120,6 +121,7 @@ function jsonCarrito(){
     return json_carrito;
 }
 
+//cargar carrit0 al local
 function cargarCarritoDeLocalStorage () {
     var jsoncarrito = JSON.parse(localStorage.getItem('carritoAhora')) || [];
     jsoncarrito.forEach (function (el){
