@@ -40,10 +40,6 @@ header nav{
 .visible_menu nav{
   left: 0;
 }
-/* .invisible_menu nav{
-  left: -100%;
-  opacity: 1;
-} */
 .form-consulta {
   max-width: 100%;
   margin:0 auto;
@@ -163,8 +159,7 @@ section {
 }
 .banner3{
   padding:0;
-  margin-left:-1.5em;
-  margin-right:-1em;
+  margin-right:0 -1em 0 -1.5em;
 }
 .banner3 img{
   font-size:100%;
@@ -416,15 +411,6 @@ footer ul li{
 /* para el chiste del modo oscuro */
 /*desde los 560px para arriba pasa esto*/
 @media (min-width: 35em){
-#cerrarmenux{
-  display:none;
-}
-header nav { 
-	float: left;
-	height:100%;
-	display:block;
-	transition: all 0.01s ease;
-}
 header nav ul {
 	overflow: auto;
 }
@@ -458,10 +444,14 @@ header nav{
   margin:0 auto;
   height:5em;
   padding:1.5em 0;
-  width: 80%;
-  transition: all 0.0001s ease;
+}
+#cerrarmenux{
+  display:none;
 }
 #menu_on{
+  display: none;
+}
+#fernet{
   display: none;
 }
 *{
@@ -508,10 +498,7 @@ main {
 	padding-top: 60px; 
 }
 .bannerholi{
-  padding-top: 4em; 
-  width:35%; 
-  margin:0 auto;
-  text-align:center;
+  width:35%;
 }
 .bannerholix{
   width:50%;
@@ -533,7 +520,6 @@ header nav a{
   background-color: #000;
 }
 .logo img{
-  width:8em;
   padding-top:0.5em;
 }
 .gracias{
@@ -545,12 +531,8 @@ header nav a{
   padding: 8em 0em 6em 0em;
 }
 header{
-  display:block;
   padding-top: 0.5em;
-  overflow: auto;
-  background: black;
   height: 12.5%;
-  width: 100%;
 }
 header nav ul li {
 	padding: 0 0.5em 0 0.5em;
@@ -599,7 +581,6 @@ header nav ul li:hover{
 }
 .banner3{
   width:28%;
-  margin:0 1em 0 1em;
   display:inline-block;
   overflow:auto;
   margin:1em;
@@ -608,8 +589,6 @@ header nav ul li:hover{
   text-align:left;
 }
 .intro{
-  text-align:left;
-  width:100%;
   padding:2em 0;
 }
 .form-consulta {
@@ -625,7 +604,8 @@ header nav ul li:hover{
   overflow:auto;
 }
 .banner5{
-  max-width: 50%; margin-right:16em;
+  max-width: 50%;
+  margin-right:16em;
   display:inline-block;
   overflow:auto;
   margin:5% 10% 5% 10%;
