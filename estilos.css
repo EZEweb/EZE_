@@ -12,6 +12,38 @@
 body{
 	background-color: black;
 }
+header nav{
+  left:-100%;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+  transition: all 0.75s ease;
+	z-index: 2;
+	padding: 3em 1em 3em;
+	font-size: 1.2em;
+	overflow-y: auto;
+	display:block;
+	overflow:auto;
+	background: black;
+}
+#menu_on{
+  position: absolute;
+}
+#menu_on img{
+  margin-left: -50%;
+}
+#cerrarmenux{
+  float:right;
+  z-index:2;
+}
+.visible_menu nav{
+  left: 0;
+}
+/* .invisible_menu nav{
+  left: -100%;
+  opacity: 1;
+} */
 .form-consulta {
   max-width: 100%;
   margin:0 auto;
@@ -58,10 +90,6 @@ header{
   left: 0;
   top: 0;
 }
-#cerrarmenux{
-  float:right;
-  z-index:2;
-}
 section {
   padding:0;
   margin: 0;
@@ -71,32 +99,6 @@ section {
   width:8em;
   padding:0;
 }
-header nav{
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left:-100%;
-	width: 100%;
-	z-index: 2;
-	padding: 3em 1em 3em;
-	background: black;
-	transition: all 0.75s ease;
-	font-size: 1.2em;
-	overflow-y: auto;
-	display:block;
-	overflow:auto;
-}
-#menu_on{
-  position: absolute;
-}
-#menu_on img{
-  margin-left: -50%;
-}
-#menu_off{
-  position: absolute;
-  z-index: 445;
-  margin: 0 0 0 -3em;
-}
 #fernet{
   text-align:left;
   font-size:70%;
@@ -104,14 +106,6 @@ header nav{
 #fernet img{
   width: 40%;
   float:left;
-}
-.visible_menu nav{
-  left: 0;
-  opacity: 1;
-}
-.invisible_menu nav{
-  left: -100%;
-  opacity: 1;
 }
 .slider{
   padding: 10em 0 10em 0;
@@ -459,6 +453,17 @@ footer {
 }
 /*desde los 960px para arriba pasa esto*/
 @media (min-width: 60em) {
+header nav{
+  left:17em;
+  margin:0 auto;
+  height:5em;
+  padding:1.5em 0;
+  width: 80%;
+  transition: all 0.0001s ease;
+}
+#menu_on{
+  display: none;
+}
 *{
 	margin: 0;
 	padding: 0;
@@ -513,9 +518,6 @@ main {
   margin:0 auto;
   padding-bottom:6em;
 }
-#menu_on{
-	display: none;
-}
 #grid{
 	grid-template-columns: 30% 30% 30%;
 	margin:10% 4% 20% 4%;
@@ -549,20 +551,6 @@ header{
   background: black;
   height: 12.5%;
   width: 100%;
-}
-header nav{
-	top: 0;
-	left:17em;
-	margin:0 auto;
-	height:5em;
-	padding:1.5em 0;
-	position:fixed;
-	bottom: 0;
-	width: 80%;
-	background: black;
-	transition: all 0.0001s ease;
-	font-size: 1.2em;
-	overflow-y: auto;
 }
 header nav ul li {
 	padding: 0 0.5em 0 0.5em;
