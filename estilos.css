@@ -58,14 +58,9 @@ header{
   left: 0;
   top: 0;
 }
-.cerrarmenux{
+#cerrarmenux{
   float:right;
-  margin-right: -97%;
-  transform: rotate(-90deg);
   z-index:2;
-}
-.cerrarmenux img{
-  width: 10%;
 }
 section {
   padding:0;
@@ -93,18 +88,22 @@ header nav{
 }
 #menu_on{
   position: absolute;
-  margin-left: -87%;
-  margin-top: 77%;
-  transform: rotate(-270deg);
 }
 #menu_on img{
-  width: 10%;
+  margin-left: -50%;
 }
 #menu_off{
   position: absolute;
   z-index: 445;
-  width: 10%;
   margin: 0 0 0 -3em;
+}
+#fernet{
+  text-align:left;
+  font-size:70%;
+}
+#fernet img{
+  width: 40%;
+  float:left;
 }
 .visible_menu nav{
   left: 0;
@@ -423,7 +422,7 @@ footer ul li{
 /* para el chiste del modo oscuro */
 /*desde los 560px para arriba pasa esto*/
 @media (min-width: 35em){
-.cerrarmenux{
+#cerrarmenux{
   display:none;
 }
 header nav { 
