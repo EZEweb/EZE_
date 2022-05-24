@@ -10,37 +10,39 @@
 <script type="text/javascript" src="functions.js"></script>
 </head>
 <body>
-    <section>
-      <div class="hamburguesa">
-        <a href="#" id="menu_on">
-          <img src="img/logo.png"  style="transform: rotate(-270deg); width: 5em;">
-        </a>
-      </div>
-    <header>
-      <div class="logo">
-        <a href="index.html">
-          <img src="img/iso.gif">
-        </a>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="identidad.html" >trabajos_</a></li>
-          <li><a href="carrito.html">merch_</a></li>
-          <li><a href="yo.html">contacto_</a></li>
-          <li id="carro">  
-            <a class="cart-btn">
-              <img src="img/carrito.png">
-              <p class ="cantidad-en-carro">0</p>
-            </a>
-          </li>
-        </ul>
-        <a href="editorial.html"><img src="img/logo.png" style="float:right; transform: rotate(-90deg); width: 5em; margin-right:-2em; z-index:2;"></a>
-        <a href="yo.html" style="text-align:left; float:left; max-width:50%; font-size:70%; padding:12em 0 0 0;";>¿Queres saber sobre mí? !Entrá acá y te cuento mientras tomamos algo!
-        <img src="img/fernet.gif" style="float:left; width:80%;"></a>
-      </nav>
-  </header>
-  </section>
-
+	<section>
+		<div id="hamburguesa">
+			<div id="menu_on">
+				<img src="img/logo.png">
+			</div>
+		</div>
+		<header>
+			<div class="logo">
+				<a href="index.html">
+					<img src="img/iso.gif">
+				</a>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="identidad.html" >trabajos_</a></li>
+					<li><a href="carrito.html">merch_</a></li>
+					<li><a href="yo.html">contacto_</a></li>
+					<li>
+						<div class="switch-button">
+							<input type="checkbox" name="switch-button" id="switch-label" class="switch-button__checkbox">
+							<label for="switch-label" class="switch-button__label"></label>
+						</div>
+					</li>
+					<li>
+						<div class="cerrarmenux">
+							<img src="img/logo.png">
+						</div>
+					</li>
+				</ul>
+				<a style="text-align:left; float:left; max-width:50%; font-size:70%; padding:12em 0 0 0;";><img src="img/fernet.gif" style="float:left; width:80%;"></a>
+			</nav>
+		</header>
+	</section>
   <div class="carrito">
     <div class="carrito-desplegado">
       <i id="boton-cerrar" class="fas fa-times"></i>

@@ -1,12 +1,12 @@
-// const menux = document.querySelector('#hamburguesa');
+// const menux = document.querySelector('#menu_on');
 // const menu_desplegado = document.querySelector('nav');
-// const menu_oculto = document.querySelector('#cerrarmenux');
+// const menu_oculto = document.querySelector('.cerrarmenux');
 
 // menux.addEventListener("click",()=>{
 //   menu_desplegado.classList.add("open");
 // })
 
-// menuxclose.addEventListener("click",()=>{
+// menu_oculto.addEventListener("click",()=>{
 //   menu_desplegado.classList.remove("open");
 // })
 
@@ -19,7 +19,7 @@ $( document ).ready(function() {
     $('#menu_on').click(function(){
     	$('body').toggleClass('visible_menu');
     })
-    $('#menu_off').click(function(){
+    $('.cerrarmenux').click(function(){
       $('body').toggleClass('visible_menu');
     })  
 });
