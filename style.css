@@ -13,7 +13,7 @@ body{
 }
 header nav{
   left:-100%;
-	position: fixed;
+	position: absolute;
 	top: 0;
 	bottom: 0;
 	width: 100%;
@@ -25,6 +25,7 @@ header nav{
 	display:block;
 	overflow:auto;
 	background: black;
+  z-index: 999;
 }
 #menu_on{
   position: absolute;
@@ -161,6 +162,30 @@ footer ul li{
 .switch-button .switch-button__checkbox:checked + .switch-button__label:before {
   transform: translateX(1rem);
 }
+
+.indice {
+  width: 100%;
+  display: grid;
+  flex-flow: row;
+  align-content: space-around;
+  justify-content: center;
+  margin: 8em auto 5em auto;
+	padding-top: 2%; 
+}
+article {
+  position: relative;
+  background-color: rgb(0, 0, 255);
+  border-radius: 1em;
+  padding: 2em;
+  padding-bottom: 1.2em;
+  margin: 1em;
+}
+.link {
+  color: #ffffff;
+  border-top: #dfdfdf;
+  margin-bottom: 0em;
+  padding-top: 1em;
+}
 /* para el chiste del modo oscuro */
 /*desde los 560px para arriba pasa esto*/
 @media (min-width: 35em){
@@ -184,6 +209,41 @@ footer {
 }
 /*desde los 960px para arriba pasa esto*/
 @media (min-width: 60em) {
+  
+  
+.indice {
+  display: flex;
+}
+
+article {
+  width: 25%;
+}
+
+section {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  justify-content: space-between;
+}
+
+section:first-child {
+  position: absolute;
+  top: 100%;
+  margin: 0em;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+p {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
 header nav{
   left:17em;
   margin:0 auto;
@@ -207,11 +267,6 @@ header nav{
 	line-height:120%;
 	letter-spacing: -1px;
 }
-main {
-	font-size: 1em;
-	line-height: 1.5em;
-	padding-top: 60px; 
-}
 header nav a{
   display: none;
 }
@@ -228,6 +283,9 @@ header nav a{
 header{
   padding-top: 0.5em;
   height: 12.5%;
+  background-color: #000;
+  z-index: 999;
+  position: fixed;
 }
 header nav ul li {
 	padding: 0 0.5em 0 0.5em;
