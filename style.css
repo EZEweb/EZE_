@@ -8,7 +8,6 @@
 	color: white;
 	list-style:none;
 }
-
 button{
   display: flex;
   text-align: center;
@@ -18,9 +17,16 @@ button{
   margin-top: 2%;
   border:2px solid #d0d0d0;
 }
-  
 body{
 	background-color: black;
+}
+h1{
+  font-size: xx-large;
+  line-height: 100%;
+}
+p{
+  font-size: larger;
+  letter-spacing: 1px;
 }
 header nav{
   left:-100%;
@@ -142,17 +148,35 @@ footer ul li{
 }
 article {
   position: relative;
-  background-color: rgb(0, 0, 255);
   border-radius: 1em;
   padding: 2em;
   padding-bottom: 1.2em;
   margin: 1em;
 }
-.link {
-  color: #ffffff;
-  border-top: #dfdfdf;
-  margin-bottom: 0em;
-  padding-top: 1em;
+.web{
+  background-color: rgb(255, 0, 0);
+}
+.organizacion{
+  background-color: rgb(0, 0, 0);
+  border: solid 1px #fff;
+}
+.foto{
+  background-color: rgb(0, 0, 255);
+}
+.diseno{
+  background-color: rgb(0, 255, 0);
+}
+.diseno h1{
+  color: #000;
+}
+.diseno p{
+  color: #000;
+}
+.diseno a{
+  color: #000;
+}
+.motion{
+  background-color: rgb(255, 0, 255);
 }
 /* para el chiste del modo oscuro */
 /*desde los 560px para arriba pasa esto*/
