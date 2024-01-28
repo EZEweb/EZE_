@@ -4,10 +4,22 @@
 	border: 0;
 	box-sizing: border-box;
 	text-decoration: none;
-  font-family: 'VT323', monospace;
+  font-family: "Silkscreen", sans-serif;
 	color: white;
 	list-style:none;
 }
+.silkscreen-regular {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.silkscreen-bold {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 button{
   display: flex;
   text-align: center;
