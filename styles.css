@@ -2,7 +2,7 @@ html, body {
     background-color: black;
     width: 100%;
     height: 100%;
-    background-image: url("http://res.cloudinary.com/adamlancon/image/upload/v1506452186/untitled_10_kpjcmn.svg");
+    background-image: url("img/fondo.jpg");
     background-size: cover;
     overflow: hidden;
     background-position: center center;
@@ -285,7 +285,7 @@ html, body {
   
   .projectPage {
     display:none;
-    background-image: url("http://res.cloudinary.com/adamlancon/image/upload/v1506500545/megamanselectbackground_uuj0fx.png");
+    background-image: url("img/fondo-2.jpg");
     background-size: 100% 100%;
     background-position: center center;
     background-repeat: no-repeat;
@@ -355,7 +355,7 @@ html, body {
   }
   
   .fourth {
-   grid-area:3/2/4/3;
+    grid-area:3/2/4/3;
     justify-self: center;
   }
   
@@ -446,20 +446,12 @@ html, body {
     grid-area: 1/1/2/2;
   }
   
-  .twitter {
+  .github {
     grid-area: 1/2/2/3;
   }
   
-  .codepen {
-    grid-area: 1/3/2/4;
-  }
-  
-  .github {
-    grid-area: 1/5/2/6;
-  }
-  
   .linkedin {
-    grid-area: 1/4/2/5;
+    grid-area:1/3/2/4;
   }
   
   .closing {
