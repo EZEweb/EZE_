@@ -13,6 +13,12 @@ html, body {
     text-decoration: none;
   }
   
+  .press-start-2p-regular {
+    font-family: "Press Start 2P", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
   
   
   /*IMAGES FOR FRONT PAGE AND KEYFRAMES*/
