@@ -183,7 +183,7 @@ html, body {
   
   
   #adam2 {
-    animation: wind 0.5s cubic-bezier(1,0.5,0.5,1) infinite;
+    animation: wind 4s cubic-bezier(1,0.5,0.5,1) infinite;
   }
   
   
@@ -337,12 +337,13 @@ html, body {
     width: 90%;
     color: white;
     font-size: 10px;
-  }
+    }
   
   .projectTab > div > a > img {
     height: 95%;
     width: 95%;
     border: ridge blue 4px;
+    margin-bottom: 5%;
   }
   
   .first {
